@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ares"
+version = "0.1.0"
+description = "ARES — autonomous digital worker runtime. Perceives the web, plans, acts, remembers, earns, pays for its own existence."
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+dependencies = [
+    "anthropic>=0.39",
+    "openai>=1.12",
+    "playwright>=1.44",
+    "httpx>=0.27",
+    "pydantic>=2.5",
+    "pydantic-settings>=2.1",
+    "rich>=13.0",
+    "click>=8.1",
+    "solana>=0.34",
+    "solders>=0.21",
+    "base58>=2.1",
+    "tiktoken>=0.7",
+    "sqlalchemy>=2.0",
+    "numpy>=1.26",
+    "tenacity>=8.2",
+]
+
+[project.scripts]
+ares = "ares.cli:cli"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
